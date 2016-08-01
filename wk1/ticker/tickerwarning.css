@@ -1,0 +1,15 @@
+body {
+  overflow: hidden;
+}
+
+#ticker {
+white-space: nowrap;
+overflow: hidden;
+color: black;
+position: absolute;
+left:100%;
+}
+
+div > a {
+  padding-left: 28px;
+}

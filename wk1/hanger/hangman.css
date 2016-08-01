@@ -1,0 +1,46 @@
+#hanger {
+  height: 90%;
+  width: 30%;
+  position: absolute;
+  top:0px;
+  left:0px;
+  display: block;
+  background-color: green;
+}
+
+#Wordspace {
+  display: block;
+position: absolute;
+top: 0%;
+left: 30%;
+height: 25%;
+width: 60%;
+background-color: red;
+padding-top: 2%;
+}
+
+.empty {
+  display: inline;
+margin-left: 3%;
+top: 5%;
+position: relative;
+}
+
+#LetterBoard {
+  list-style: none;
+  position: absolute;
+  display: inline-block;
+  width: 50%;
+  top:30%;
+  left: 35%;
+}
+
+div > ul {
+  position: relative;
+  display: inline-block;
+  margin-right: 10%;
+}
+
+div> ul > li {
+  padding-bottom: 10px;
+}

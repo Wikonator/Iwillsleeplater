@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+}
+ul{
+  list-style-type: none;
+  position: absolute;
+  border: 1px pink solid;
+  width: 139px;
+  margin: 0;
+  display: none;
+}
+.active{
+  display: block;
+}
+
+.listItemHide {
+    display: none;
+}
+
+.listItemShow {
+    display: block;
+}
+
+textarea{
+  width: 139px;
+}

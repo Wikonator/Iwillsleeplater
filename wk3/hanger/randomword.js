@@ -14,10 +14,11 @@
       var LoseWin = document.getElementById("LoseWin");
       var vicAud = new Audio("FlawlessVictory.mp3");
       var loseAud = new Audio("uLose.mp3");
+      var hanger = document.getElementById("hanger")
+      var canvas = hanger.getContext("2d");
 
       var canvasGo = function() {
-       var hanger = document.getElementById("hanger")
-       var canvas = hanger.getContext("2d");
+
        canvas.strokeStyle = "#900";
        canvas.beginPath();
        canvas.moveTo(50, 140);
@@ -88,51 +89,51 @@ function soreLoser() {
 
 
 function drawNextPart(c) {
-    var paintJob = {
-        drawRope: function() {
+
+    var paintJob = [
+         function drawRope() {
             canvas.beginPath();
             canvas.moveTo(175,35);
             canvas.lineTo(175,60);
             canvas.stroke();
         } ,
-        drawNoose: function() {
+        function drawNoose() {
             canvas.beginPath();
-            canvas.arc(175, 72, 12, 0, 6.283, false);
+            canvas.arc(175, 70, 10, 0, 6.283, false);
             canvas.stroke();
         } ,
-        drawBody: function() {
+        function drawBody() {
             canvas.beginPath();
             canvas.moveTo(175,80);
             canvas.lineTo(175,110);
             canvas.stroke();
         } ,
-        drawLeftLeg: function() {
+        function drawLeftLeg() {
             canvas.beginPath();
             canvas.moveTo(175,110);
             canvas.lineTo(150,130);
             canvas.stroke();
         },
-        drawRightLeg: function () {
+        function drawRightLeg() {
             canvas.beginPath();
             canvas.moveTo(175,110);
             canvas.lineTo(190,110);
             canvas.stroke();
         },
-        drawLeftArm: function () {
+        function drawLeftArm() {
             canvas.beginPath();
             canvas.moveTo(175,87);
             canvas.lineTo(167,99);
             canvas.stroke();
-        },
-        drawRightArm: function () {
+        } ,
+        function drawRightArm() {
             canvas.beginPath();
             canvas.moveTo(175,87);
             canvas.lineTo(183,99);
             canvas.stroke();
         }
-        paintJob [c]();
-    };
-
+    ];
+    paintJob[c]();
 }
 
 window.addEventListener("keypress", check);

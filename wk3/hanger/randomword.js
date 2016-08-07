@@ -3,7 +3,7 @@
       var letterArray;
       var spannySpans;
       var badCounter = -1;
-      var goodCounter = -1;
+      var goodCounter = 0;
       var wordSpace = document.getElementById("Wordspace");
       var wrongLetters = [];
       var rYouPressed = [];
@@ -16,6 +16,7 @@
       var loseAud = new Audio("uLose.mp3");
       var hanger = document.getElementById("hanger")
       var canvas = hanger.getContext("2d");
+          var thisRound = "";
 
       var canvasGo = function() {
 
@@ -117,7 +118,7 @@ function drawNextPart(c) {
         function drawRightLeg() {
             canvas.beginPath();
             canvas.moveTo(175,110);
-            canvas.lineTo(190,110);
+            canvas.lineTo(190,130);
             canvas.stroke();
         },
         function drawLeftArm() {
@@ -144,17 +145,19 @@ function check(e) {
     for (var x=0 ; x < letterArray.length; x++) {
         if(letterArray[x] == keyPress ) {
             if (rYouPressed.indexOf(keyPress) == -1) {
-                rYouPressed.push(keyPress);
-                console.log(rYouPressed);
+                thisRound += keyPress;
+                console.log(thisRound);
               spannySpans[x].innerHTML = keyPress;
               letterFound = true;
               goodCounter += 1;
               victory();
               console.log("good " + goodCounter);
-          } else { return;
+          } else { rYouPressed.push(thisRound);
+                return;
               }
          }
       }
+      rYouPressed = thisRound.split("");
     if (letterFound == false) {
       for (var y = 0; y < wrongLetters.length; y++) {
           if (wrongLetters[y].innerText == keyPress.toUpperCase() ) {

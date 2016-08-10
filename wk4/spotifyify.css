@@ -15,5 +15,22 @@ padding-left: 11px;
     width: 90%;
     border-width: 4px;
     border: solid;
+    list-style: none;
 
+}
+
+ul > li > img {
+    height: 10%;
+    width: 20%;
+}
+
+#moar {
+    background-color: purple;
+    border-radius: 25px;
+    border: 3px black;
+    height: 25px;
+    width: 58px;
+    display: block;
+    margin: 20px;
+    padding-left: 14px;
 }
